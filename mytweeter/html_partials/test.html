@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Inscription/connexion</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../Skeletoncss/normalize.css">
+  <link rel="stylesheet" href="../Skeletoncss/skeleton.css">
+  <link rel="stylesheet" href="../Skeletoncss/style.css">
+  <!-- JS ––––––––––––––––––––––––––––––––––––––––––––––––––
+    -->
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="../JS/test.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../assets/Kwak_logo_title.svg">
+
+</head>
+<style>
+  .modal {
+    position: absolute;
+    top: 5vh;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    margin: auto;
+  }
+</style>
+
+<body>
+  <div id="showtext">
+  </div>
+  <div>
+    <button data-target="mymodal">KWAK</button>
+  </div>
+  <div class="modal" id="mymodal">
+    <form>
+      <label for="exampleMessage">Message</label>
+      <textarea style="resize: none;" class="u-full-width" id="kwak" placeholder="Hi Dave …"
+        id="exampleMessage"></textarea>
+      <button class="button-primary modal-close" type="button">KWAK</button>
+    </form>
+  </div>
+
+
+  <!-- TEST MESSAGERIE -->
+  <div class="container">
+    <div class="row">
+        <input type="search" placeholder="TEST" id="input-test">
+    </div>
+    <div id="list">
+    </div>
+  </div>
+  
+
+</body>

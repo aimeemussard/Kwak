@@ -1,0 +1,565 @@
+@media only screen and (min-width: 768px) and (max-width: 1024) {
+    .text-container{
+        display: none;
+    }
+}
+
+/* code Aimée */
+
+body{
+    margin: 0;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    height: 7vh;
+}
+
+footer{
+    padding-top: 3rem;
+    height:20vh;
+    background-color: whitesmoke;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 9vh;
+    z-index: 9;
+    background-color: white;
+    box-shadow: 0px 2px 11px darkmagenta;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbar:hover{
+    height: 10vh;
+    padding: 0.5rem 2rem 0rem 0rem;
+}
+
+    /* FORM */
+
+#birthdate-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form-header{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.form-header>li>a{
+    color: #f5f5f5;
+    font-size: 1.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-header>li>a::before, .form-header>li>a::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 0px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-header>li>a:hover:before, .form-header>li>a:hover::after{
+    
+    transform: scaleX(-1);
+    height: 4px;
+    width: 50%;
+}
+
+.form-header>li>a:hover:before{
+    left: 0;
+    transform-origin: right;
+}
+
+.form-header>li>a:hover::after{
+    right: 0;
+    transform-origin: left;
+}
+
+.form-header>li>.active{
+    color: white;
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.form-header>li:hover :is(:not(.active)){
+    color: white;
+}
+
+.title{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-style: oblique;
+    font-weight: bold;
+    margin: 0rem 0rem 0rem 1rem;
+    letter-spacing: 0.1em;
+    /*rotate: 355deg;*/
+    text-shadow: 0 0 0 #fb6421,
+.0025em .0025em 0 #fb6421,
+.005em .005em 0 #fb6421,
+.0075em .0075em 0 #fb6421,
+.01em .01em 0 #fb6421,
+.0125em .0125em 0 #fb6421,
+.015em .015em 0 #fb6421,
+.0175em .0175em 0 #fb6421,
+.02em .02em 0 #fb6421,
+.0225em .0225em 0 #fb6421,
+.025em .025em 0 #fb6421,
+.0275em .0275em 0 #fb6421,
+.03em .03em 0 #fb6421,
+.0325em .0325em 0 #fb6421,
+.035em .035em 0 #fb6421,
+.0375em .0375em 0 #fb6421,
+.04em .04em 0 #fb6421,
+.0425em .0425em 0 #fb6421, 
+.045em .045em 0 #fb6421,
+.0475em .0475em 0 #fb6421,
+.05em .05em 0 #fb6421,
+.0525em .0525em 0 #fb6421,
+.055em .055em 0 #fb6421,
+.0575em .0575em 0 #fb6421,
+.06em .06em 0 #fb6421,
+.0625em .0625em 0 #fb6421,
+.065em .065em 0 #fb6421,
+.0675em .0675em 0 #fb6421, 
+.07em .07em 0 #fb6421,
+.0725em .0725em 0 #fb6421,
+.075em .075em 0 #fb6421,
+.0775em .0775em 0 #fb6421,
+.08em .08em 0 #fb6421,
+.0825em .0825em 0 #fb6421,
+.085em .085em 0 #fb6421,
+.0875em .0875em 0 #fb6421,
+.09em .09em 0 #fb6421,
+.0925em .0925em 0 #fb6421,
+.095em .095em 0 #fb6421,
+.0975em .0975em 0 #fb6421,
+.1em .1em 0 #fb6421
+}
+
+.text-link{
+    color: #e91e63;
+}
+
+#text{
+    color: white;
+    font-size: 2.5rem;
+    margin: 3rem 0rem 0rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#subtext{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 3rem 0rem 0rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.error {
+    position: relative;
+    animation: error .1s linear;
+    animation-iteration-count: 3;
+    }
+
+@keyframes error {
+    0% { left: -5px; border: none; border-bottom: 2px solid #e91e63; }
+    100% { right: -5px; border: none; border-bottom: 2px solid #e91e63; }
+}
+
+p,h2{
+    position: relative;
+    z-index: 1;
+}
+
+.image{
+    background-image: url(../assets/background2.svg), url(../assets/background_blur.svg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 8rem;
+}
+
+.text{
+    padding-top: 5rem;
+    height: 105vh;
+    position: relative;
+    background: white;
+    box-shadow: 0px -2px 11px darkmagenta;
+}
+
+.show-container{
+    position: relative;
+    bottom: 4.5rem;
+}
+
+#eye-closed>path , #eye-open>path, #eyeClosed>path , #eyeOpen>path{
+    fill: darkgray;
+}
+
+#eye-closed:hover>path , #eye-open:hover>path, #eyeClosed:hover>path , #eyeOpen:hover>path{
+    fill: #fb6421;
+}
+
+#eye-closed, #eyeClosed, #eye-open, #eyeOpen{
+    height: 30px;
+    cursor: pointer;
+}
+
+#eye-closed, #eyeClosed{
+    display: none;
+}
+
+/* alert container */
+.alert {
+    cursor: pointer;
+    user-select: none;
+  }
+
+.alert .alerttext {
+    display: none;
+    color: #fb6421;
+}
+
+.alert .show {
+    display: block;
+    animation: fadeIn 1s;
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.title span:not(.fade){
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.title span{
+    transition: all .4s;
+    display: inline-block;
+}
+
+
+    /*PUBLIC PROFILE*/
+
+#footer-banner{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 7vh;
+    background: #e91e63;
+    box-shadow: 1px 1px 10px darkmagenta;
+    color: #ffffff;
+}
+
+.banner {
+    overflow: hidden;
+    background-color: #e8e8e8;
+    height: 20vh;
+}
+
+.img-profile {
+    position: absolute;
+    top: 71px;
+    left: 33px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+}
+
+.profile-picture {
+    border-radius: 50%;
+}
+
+.content-user {
+    width: 20%;
+}
+
+.button-interaction {
+    font-weight: bold;
+    cursor: pointer;
+    color: #5c5e6e;
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+    border: none;
+    height: 4rem;
+    border-radius: 50px;
+}
+
+.align-center{
+    display: flex;
+    align-items: center;
+}
+
+#button-follow{
+    margin: 2rem 0rem;
+}
+
+.button-main {
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+    border-radius: 0;
+    height: 5rem;
+    padding: 0;
+    cursor: pointer;
+    color: #5c5e6e;
+    font-size: 1.1em;
+    transition: all .1s;
+}
+
+#home-navbar-buttons, #navbar-buttons, #profile-buttons-container{
+    border: none;
+    border-bottom: 1px solid #5c5e6e20;
+    margin-bottom: 2rem;
+}
+
+button.active {
+    color: rgb(188, 188, 188);
+    border-bottom: 3px solid #e91e63;
+}
+
+    /* ASIDE NAVBAR + search */
+
+.aside-container {
+    margin: 1rem 0rem;
+    padding: 0rem 1rem 1rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #e8e8e8;
+}
+
+.aside-container>div:nth-child(1), .aside-container>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+#search-aside>input:hover + svg, #search-aside>input:focus + svg, #search>input:hover + svg, #search>input:focus + svg{
+    fill:#fb6421;
+}
+
+.search{
+    position:relative;
+    bottom: 4.4rem;
+    width: 25px;
+    fill: darkgray;
+}
+
+.search-aside{
+    position:relative;
+    top: 2.4rem;
+    right: 30rem;
+    width: 25px;
+    fill: darkgray;
+}
+
+.arrow{
+    fill: darkgray;
+    position: relative;
+    top: 2.2rem;
+    left:1.4rem;
+    width: 25px;
+}
+
+.arrow:hover{
+    fill: #5c5e6e;
+}
+
+input[type="search"].input-search{
+    padding-left: 5rem;
+    font-size: 2rem;
+}
+
+
+    /* NAVBAR */
+
+.sticky{
+    position: fixed;
+}
+
+.navbar-left{
+    height: 100vh;
+    border-right:  1px solid #a9a9a975;
+}
+
+.navbar-right{
+    height: 100vh;
+    border-left:  1px solid #a9a9a975;
+}
+
+.navbar-top{
+    height: auto;
+    background: white;
+    z-index: 99;
+}
+
+#navbar-public-profile, #navbar-private-profile{
+    display: flex;
+    align-items: baseline;
+    height: 9vh;
+}
+
+.blur{
+    width: 50%;
+    background: #ffffff99;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0rem;
+}
+
+.logo>img:nth-child(1){
+    cursor: pointer;
+    height: 50px ;
+    width: 50px ;
+    margin-right: 2rem;
+}
+
+.logo>img:nth-child(2){
+    cursor: default;
+    height: 50px;
+    width: 100px;
+}
+
+.logo>img:nth-child(1):hover{
+    animation: shake 0.7s;
+    transform: scale(1.3);
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(15deg) scale(1.3); }
+    40% { transform: rotate(-25deg) scale(1.3); }
+    60% { transform: rotate(25deg) scale(1.3);}
+    80% { transform: rotate(-15deg) scale(1.3);}
+    100% { transform: rotate(0deg) scale(1.3);}
+}
+
+.button-navbar>i, .button-navbar>img, .button-interaction>i{
+    margin-right: 1rem;  
+}
+
+.button-navbar{
+    display: flex;
+    align-items: center;
+    color: #5c5e6e;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    padding: 5px 15px;
+    margin: 2rem 0rem 0rem 0rem;
+    height: 5.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.button-navbar:hover{
+    background: #71717150;
+}
+
+.follow-container, .kwak-container{
+    padding: 1.5rem 0rem;
+    border-bottom: 1px solid #5c5e6e50;
+}
+
+
+.log-out{
+    margin-top: 10rem;
+    cursor: pointer;
+}
+
+#trending{
+    background: #5c5e6e20;
+    border-radius: 25px;
+    margin: 2rem 1.5rem;
+    padding: 1rem 1rem;
+    height: 60vh;
+    overflow: scroll;
+}
+
+.message-container{
+    overflow-y: scroll;
+}
+
+.text-messages-container{
+    height: 85vh;
+    margin: 1rem 0rem;
+}
+
+.inputFile{
+    display: none;
+}
+
+.editBanner, .editPicture{
+    border-radius: 50%;
+    background: #5c5e6e60;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editBanner:hover, .editPicture:hover{
+    transform: scale(1.05);
+    background: #5c5e6e80;
+}
+
+.editBanner>svg, .editPicture>svg{
+    width: 4rem;
+    height: 4rem;
+    fill: #5c5e6e80;
+}
+
+.editBanner:hover>svg, .editPicture:hover>svg{
+    fill: #5c5e6e;
+}
+
+.editBanner{
+    top: 3rem;
+    height: 9rem;
+    width: 7rem;
+}
+
+.editPicture{
+    height: 7rem;
+    width: 7rem;
+    top: 11.7rem;
+    left: 8rem;
+}
+
+.message{
+    overflow: hidden;
+    height: 5rem;
+    cursor: pointer;
+}

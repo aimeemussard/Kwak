@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Kwak | Votre réseau social conçu pour vous</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="../Skeletoncss/normalize.css">
+    <link rel="stylesheet" href="../Skeletoncss/skeleton.css">
+    <link rel="stylesheet" href="../Skeletoncss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JS ––––––––––––––––––––––––––––––––––––––––––––––––––
+        -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../JS/index_profile.js"></script>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="../assets/Kwak_logo_title.svg">
+
+</head>
+
+<!-- profile main user -->
+<!-- ----------------------------------------------------------------------- -->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- NAVBAR OPTIONS-->
+            <div class="three columns sticky navbar-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="eight columns offset-by-four logo">
+                            <img src="../assets/Kwak_logo_title.svg" onclick="showHome()">
+                            <img src="../assets/Kwak_txt_logo-14.svg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns offset-by-three">
+                            <button type="button" class="button-navbar" id="home-button" onclick="showHome()"><i
+                                    class="fa-solid fa-house"></i>Acceuil
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns offset-by-three">
+                            <button type="button" class="button-navbar " id="explore-button" onclick="showExplorer()"><i
+                                    class="icon fa-solid fa-hashtag"></i>Explorer
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns offset-by-three">
+                            <button type="button" class="button-navbar " id="messages-button"
+                                onclick="showMessages()"><i class="fa-regular fa-envelope"></i>Messages
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns offset-by-three">
+                            <button type="button" class="button-navbar " id="profile-button"
+                                onclick="showPrivateProfile('user')"><i class="fa-regular fa-user"></i>Profil
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns offset-by-three">
+                            <button type="button" class="button-navbar" id="settings-button" onclick="showSettings()"><i
+                                    class="fa-solid fa-gears"></i>Paramètres
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="button-primary seven columns offset-by-three"
+                            style="font-size: 2rem; height: 5rem; border-radius: 30px;"
+                            data-target="mymodal">KWAK</button>
+                    </div>
+                    <!-- LOG OUT BUTTON -->
+                    <div class="container" >
+                        <div class="row">
+                            <div class="eight columns offset-by-two">
+                                <div class="row log-out button-navbar" onclick="logOut()">
+                                    <img class="three columns profile-picture" src="../assets/sakura_picture.png" alt="">
+                                    <div class="seven columns">
+                                        <h5>Username</h5>
+                                        <h6>@pseudo</h6>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right-from-bracket one column"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOME SECTION-->
+            <section id="home" class="six columns offset-by-three">
+                <div class="container navbar-top" id="navbar-home">
+                    <div class="row">
+                        <h5 class="three columns offset-by-one" style="font-weight: 600;">Acceuil</h5>
+                    </div>
+                    <div class="row" id="home-navbar-buttons">
+                        <button class="six columns button-main">À la une</button>
+                        <button class="six columns button-main">Personnes</button>
+                    </div>
+                </div>
+                <div class="container" id="home-results-container">
+                    <div id="home-recent" class="container">
+                        <!-- exemple kwak-->
+                        
+                        <!-- exemple user profile-->
+                        
+                    </div>
+                    <div id="home-person" class="container">
+                        <!-- exemple user profile-->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPLORER SECTION -->
+            <section id="main-search" class="six columns offset-by-three">
+                <div class="container navbar-top" id="navbar-search">
+                    <div class="row">
+                        <div class="one column">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="arrow" class="arrow"
+                                onclick="showExplorer()"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                            </svg>
+                        </div>
+                        <div id="search" class="nine columns offset-by-one">
+                            <input type="search" placeholder="Recherche Kwak" class="input-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search">
+                                <path
+                                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="row" id="navbar-buttons">
+                        <button class="three columns button-main">À la une</button>
+                        <button class="three columns button-main">Personnes</button>
+                        <button class="three columns button-main">Photos</button>
+                        <button class="three columns button-main">Vidéos</button>
+                    </div>
+                </div>
+                <div id="search-result-container">
+                    <!-- RECENT -->
+                    <div id="recent" class="container">
+                        <!-- exemple kwak-->
+                    
+                        <!-- exemple user profile-->
+                        
+                    </div>
+                    <!-- PERSONNES -->
+                    <div id="person" class="container">
+                        <!-- exemple user profile-->
+                        
+                    </div>
+                    <!-- PHOTOS -->
+                    <div id="pictures" class="container">PHOTOS</div>
+                    <!-- VIDEOS -->
+                    <div id="videos" class="container">VIDEOS</div>
+                </div>
+            </section>
+
+            <!-- MESSAGES-->
+            <section id="messages">
+                <!-- PRIMARY MESSAGES SECTION -->
+                <div id="primary-message-section" class="four columns offset-by-three">
+                    <div class="container" onclick="showConversation()">
+                        <div class="row">
+                            <h5>Messages privés</h5>
+                                <i class="icon fa-solid fa-gear one column offset-by-ten"></i>
+                                <i class="fa-sharp fa-regular fa-envelope one column"></i>
+                        </div>
+                        <div class="row align-center">
+                            <img src="../assets/sakura_picture.png" alt="photo-profil" class="one column profile-picture">
+                            <button type="button" class="button-interaction three columns offset-by-half-one">Sakura Haruno</button>
+                            <p class="three columns offset-by-half-one disabled">@username</p>
+                        </div>
+                        <!-- kwak text -->
+                        <div class="row">
+                            <div class="eleven columns offset-by-one message">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique architecto, suscipit
+                                nobis
+                                quisquam
+                                deleniti laudantium tempora eos blanditiis quod, iure possimus amet fugit. Earum quam tempora
+                                tempore
+                                modi
+                                dolorem quo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND MESSAGES SECTION -->
+                <div id="secondary-message-section" class="five columns offset-by-seven sticky navbar-right">
+                    <div class="container message-container">
+                        <div class="container" id="newMessage">
+                            <div class="row">
+                                <h4>Sélectionnez un message</p>
+                            </div>
+                            <div class="row">
+                                <p class="info">Choisissez parmi vos discussion existante, ou créer une nouvelle discussion...</p>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="button-primary" id="openMessage">Nouveau message</button>
+                            </div>
+                        </div>
+
+                        <div class="container" id="newConversation">
+                            <div class="container sticky">
+                                <div class="row">
+                                    <input type="text" placeholder="Entrer votre destinataire" id="input-test" class="ten columns offset-by-half-one">
+                                </div>
+                                <div id="user-list">
+                                </div>
+                            </div>
+                            
+                            <div class="row text-messages-container">
+                                <div class="row content-bubbles-messages" id="messagesContainer">
+                                    <p class="bubble-texts-users" id="bubbleMessages"></p>
+                                    <div class="row content-others-bubbles-messages">
+                                        <p class="bubble-texts-others-users" id="bubbleMessagesOthers"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contain sticky">
+                                <div class="row" style="bottom: 0;">
+                                    <input type="text" placeholder="Écriver votre message..." id="inputMessage" class="seven columns offset-by-half-one" name="">
+                                    <button type="button" class="three columns offset-by-one button-primary " id="sendMessage"> Envoyer</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="container" id="conversation">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- PRIVATE PROFILE SECTION -->
+            <section id="main-private-profile" class="six columns offset-by-three">
+                <div class="container">
+                    <div class="row navbar-top" id="navbar-private-profile">
+                        <div class="one column">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="arrow"
+                                onclick="showHome()"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                            </svg>
+                        </div>
+                        <div class="ten columns offset-by-one">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div id="private-profile-container" class="container">
+                    <div class="row banner" id="banner">
+                    </div>
+                    <div class="row container-profil">
+                        <div class="three columns bar">
+                            <!-- image profile -->
+                            <div class="profile" id="avatar">
+                                
+                            </div>
+                        </div>
+
+                        <div class="three columns offset-by-nine">
+                            <button type="button" id="button-follow" class="button-third">Follow</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <h5 class="eleven columns offset-by-one" id="name"></h5>
+                        <h6 class="eleven columns offset-by-one" id ="username"></h6>
+                        <p class="eleven columns offset-by-one bio" id="bio"></p>
+                        <p class="eleven columns offset-by-one location" id="city"><i class="fa-solid fa-location-dot"></i></p>
+                        <p class="eleven columns offset-by-one register-date" id ="join"><i class="fa-solid fa-calendar-days"></i></p>
+                        <a class="three columns offset-by-one a-secondary" onclick="showFollowing()">n abonnements</a>
+                        <a class="three columns offset-by-one a-secondary" onclick="showFollowers()">n abonnés</a>
+                    </div>
+                    <div class="container">
+                        <div class="row" id="profile-buttons-container">
+                            <button class="four columns button-main">Kwaks</button>
+                            <button class="four columns button-main">Media</button>
+                            <button class="four columns button-main">Likes</button>
+                        </div>
+                    </div>
+                    <section id="kwaks">
+                    </section>
+                    <section id="media">
+                        <div>
+                            test Media
+                        </div>
+                    </section>
+                    <section id="likes">
+                        <div>
+                            Test Likes
+                        </div>
+                    </section>
+                </div>  
+            </section>
+
+            <!-- FOLLOWING/FOLLOWERS SECTION-->
+            <section id="following-followers" class="six columns offset-by-three">
+                <div class="container navbar-top" id="follow-navbar">
+                    <div class="row">
+
+                    </div>
+                    <div class="row" id="follow-navbar-buttons">
+                        <button class="six columns button-main">Abonnements</button>
+                        <button class="six columns button-main">Abonnés</button>
+                    </div>
+                </div>
+
+                <!-- FOLLOWING SECTION-->
+                <div class="container" id="following">
+                    <div class="row follow-container">
+                        <div class="eleven columns offset-by-half-one">
+                            <div class="row">
+                                <img class="one column profile-picture" src="../assets/sakura_picture.png" alt="">
+                                <div class="seven columns">
+                                    <h5>Username</h5>
+                                    <h6>@pseudo</h6>
+                                </div>
+                                <button class="button-third-outline three columns offset-by-one" onclick="">Follow</button>
+                            </div>
+                            <div class="row">
+                                <p class="eleven columns offset-by-one">Bio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOLLOWERS SECTION-->
+                <div class="container" id="followers">
+                    <div class="row follow-container">
+                        <div class="eleven columns offset-by-half-one">
+                            <div class="row">
+                                <img class="one column profile-picture" src="../assets/sakura_picture.png" alt="">
+                                <div class="seven columns">
+                                    <h5>Username</h5>
+                                    <h6>@pseudo</h6>
+                                </div>
+                                <button class="button-third-outline three columns offset-by-one">Follow</button>
+                            </div>
+                            <div class="row">
+                                <p class="eleven columns offset-by-one">Bio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETTINGS SECTION-->
+            <section id="settings" class="nine columns offset-by-three">
+                <div class="container">
+                    <div class="row">
+                        <img src="../assets/Kwak_txt_logo-14.svg" id="edit-banner" class="banner twelve columns">
+                        <label for="addBanner" id="bannerButton" class="editBanner one column offset-by-one-half"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M240 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H176V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H240V80z"/></svg></label>
+                        <input type="file" id="addBanner" class="inputFile" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="row">
+                        <img src="../assets/sakura_picture.png" id="edit-avatar" class="img-profile">
+                        <label for="addPicture" id="ppButton" class="editPicture"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M240 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H176V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H240V80z"/></svg></label>
+                        <input type="file" id="addPicture" class="inputFile" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="six columns offset-by-three">
+                        <h3>Modifier vos données utilisateurs</h3>
+
+                        <div class="row">
+                            <textarea id="edit-bio">BIO</textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="three columns">
+                                <select class="select-birthdate" id="edit-day" name="edit-day">
+                                <option value="0" selected disabled>Jour</option>
+                                </select>
+                            </div>
+                            <div class="four columns offset-by-one">
+                                <select class="select-birthdate" id="edit-month" name="edit-month" onchange="onChange()">
+                                <option value="0" selected disabled>Mois</option>
+                                </select>
+                            </div>
+                            <div class="three columns offset-by-one">
+                                <select class="select-birthdate" id="edit-year" name="edit-year" onchange="onChange()">
+                                <option value="0" selected disabled>Année</option>
+                                </select>
+                            </div>
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertBirthdate">Veuillez renseigner votre date de naissance</small>
+                                <small class="alerttext" id="alertBirthdate2">Vous devez être âgé d'au moins 13 ans pour vous inscrire</small>
+                                <small class="alerttext" id="alertBirthdateDay">Veuillez renseigner votre jour de naissance</small>
+                                <small class="alerttext" id="alertBirthdateMonth">Veuillez renseigner votre mois de naissance</small>
+                                <small class="alerttext" id="alertBirthdateYear">Veuillez renseigner votre année de naissance</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="text" id="edit-username" placeholder="pseudo user" name="edit-username">
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertUsername">Veuillez renseigner un pseudo entre 8 et 20 caractères</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="text" id="edit-firstname" placeholder="firstname user" name="edit-firstname">
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertFirstname">Veuillez renseigner votre prénom</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="text" id="edit-lastname" placeholder="lastname user" name="edit-lastname">
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertLastname">Veuillez renseigner votre nom de famille</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="email" id="edit-email" placeholder="email user" name="edit-mail">
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertEmailSignup">Veuillez renseigner une adresse mail valide</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="password" id="edit-password" placeholder="password user" name="edit-password">
+                            <div class="alert twelve columns">
+                                <small class="alerttext" id="alertPasswordSignup">Votre mot de passe doit contenir entre 8 et 30 caractères, une majuscule, une minuscule, un chiffre et un symbole</small>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <button type="button" class="button-primary four columns offset-by-one-third" id="editSubmit">Valider</button>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- SEARCH BAR/LOGIN-SIGNUP -->
+            <div class="three columns offset-by-nine sticky navbar-right " id="navbar-right">
+                <div class="container" id="navbar-right-search">
+                    <div id="search-aside" class="row">
+                        <input type="search" class="ten columns offset-by-one input-search"  name="" placeholder="Recherche Kwak">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-aside"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                    </div>
+                </div>
+                <div class="container" id="navbar-right-signup">
+
+                    <div class="row ">
+                        <div class="ten columns offset-by-one aside-container">
+
+                            <div class="row">
+                                <h4>Nouveau sur Kwak?</h4>
+                            </div>
+                            <div class="row">
+                                <small>Venez découvrir ce qu'est kwaker!</small>
+                            </div>
+                            <div class="row">
+                                <button class="button-primary twelve columns"
+                                    onclick="showLogin()">Connectez-vous</button>
+                            </div>
+                            <div class="row">
+                                <button class="button-primary twelve columns" onclick="showSignup()">Créer un nouveau
+                                    compte</button>
+                            </div>
+                            <div class="row">
+                                <small>En vous inscrivant, vous acceptez les <a href="#">Conditions d'utilisation</a> et
+                                    <a href="#">la Politique de confidentialité</a>, notamment <a href="#">l'Utilisation
+                                        des cookies.</a></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="ten columns offset-by-one">
+                            <li><a class="a-secondary"><small>Conditions d’utilisation</small></a></li>
+                            <li><a class="a-secondary"><small>Politique de Confidentialité</small></a></li>
+                            <li><small><a class="a-secondary">Politique relative aux cookies </a><a class="a-secondary">
+                                        Accessibilité</a></small></li>
+                            <li><small><a class="a-secondary">Informations sur les publicités </a><a
+                                        class="a-secondary"> Plus ...</a></small></li>
+                            <li><small class="a-secondary">© 2023 Kwak, Inc.</small></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container" id="navbar-right-trending">
+                    <div class="row">
+                        <div class="eleven columns" id="trending">
+                            <h4>Populaire</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL KWAK -->
+    <div class="modal container" id="mymodal" style="position: absolute; top: 50px">
+        <div class="row">
+            <div class="six columns offset-by-three">
+                <form>
+                    <label for="exampleMessage">Message</label>
+                    <textarea style="resize: none;" class="u-full-width" id="kwak" placeholder="KwaK KwaK KwaK"></textarea>
+                    <button class="button-primary modal-close" type="button">KWAK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
